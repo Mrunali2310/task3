@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="icon">
+      <img src="assets\Ellipse 6.png">
+    </div>
+    <div class="name">Udemy Inter. school</div>
+    <div class="line">
+      <img src="ssets/Line 8.png">
+    </div>
+    <div class="icon1">Dashboard</div>
+    <div>
+      <img class="Dash-icon" src="assets/home-2.png">
+    </div>
+    <div class="icon2">Teachers</div>
+    <div>
+      <img class="Dash-icon1" src="assets/home-2.png">
+    </div>
+    <div class="student">
+      <img src="assets/Student.png">
+    </div>
+    <div class="icon3">Billing</div>
+    <div>
+      <img class="Dash-icon2" src="assets/bank.png">
+    </div>
+    <div class="icon4">Settingsandprofile</div>
+    <div>
+      <img class="img4" src="assets/setting-2.png">
+    </div>
+    <div class="icon5">Exams</div>
+    <div>
+      <img class="img5" src="assets/Group.png">
+    </div>
+    <div class="icon6">Features</div>
+    <div>
+      <img class="img6" src="assets/bank.png">
+    </div>
+    <div class="icon7">
+      <img src="assets/Frame 30114.png" >
+    </div>
+  </div>
+  <div class="export">Export CSV</div>
+  <div class="Add1">
+    <img src="assets/Frame 30095.png">
+</div>
+<div class="bell">
+  <img src='assets/Vector (4).png'>
+</div>
+<div class="horizantal">
+  <input type="text" [(ngModel)]="searchQuery" placeholder="Search by name">
+
+
+</div>
+<div class="addfilter"> AddFilter</div>
+<div class="filter">
+  <select>
+<option></option>
+<option></option>
+</select>
+</div>
+<div class="maintable">
+  
+  <table>&nbsp;&nbsp;&nbsp;&nbsp;
+    <thead>
+      <tr class="row0">
+        <th class="col1">Name</th>
+        <th class="col2">Student ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+        <th class="col3">Email address</th>
+        <th class="col4">Class</th>
+        <th class="col5">Gender</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let item of UserData; let i = index">
+        <ng-container *ngIf="item.Name.toLowerCase().includes(searchQuery.toLowerCase())">
+          <tr [class.highlighted]="i === selectedRowIndex" (click)="highlightLine(i)">
+           <td>
+              <img [src]="item.image1" (click)="showImageInfo(item)" /> {{ item.Name }}
+            </td>
+            <td class="studentId">{{ item.StudentID }}</td>
+            <td class="Emailaddress">{{ item.Emailaddress }}</td>
+            <td class="Class">{{ item.Class }}</td>
+            <td class="Gender">{{ item.Gender }}</td>
+          </tr>
+        </ng-container>
+      </ng-container>
+    </tbody>
+  </table>
+  <div class="sidebar3">
+    <div *ngIf="selectedImage">
+      <p>Student ID: {{ selectedImage.StudentID }}</p>
+      <img [src]="selectedImage.image1" [ngClass]="{ 'selected-image': selectedImage }" />
+      <h2>{{ selectedImage.Name }}</h2>
+    </div>
+  </div>
+  
+  </div>
+<div class="sidebar3">
+  <div *ngIf="selectedImage">
+    
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student ID: {{ selectedImage.StudentID }}</p>
+    <img [src]="selectedImage.image1" [ngClass]="{ 'selected-image': selectedImage }" />
+    <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ selectedImage.Name }}</h2>
+    <br><br>
+    <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gender: {{ selectedImage.Gender }}</p>
+  </div>
+  <div class="mail">
+    <img src="assets/Frame 30085.png">
+  </div>
+  <div class="call">
+    <img src="assets/Frame 30086.png">
+  </div>
+  <div class="msg">
+    <img src="assets/Frame 30087.png">
+  </div>
+  <div class="about">About</div>
+</div>
+<div class="age">Age</div>
+<div class="people">People from the same class</div>
+<div class="pic1">
+  <img src="assets/Ellipse 16.png">
+</div>
+<div class="pic2">
+  <img src="assets/Ellipse 17.png">
+</div>
+<div class="pic3">
+  <img src="assets/Ellipse 18.png">
+</div>
+<div class="pic4">
+  <img src="assets/Ellipse 19.png">
+</div>
+<div class="pic5">
+  <img src="assets/Ellipse 20.png">
+</div>
+</body>
+</html>
+
+
+
